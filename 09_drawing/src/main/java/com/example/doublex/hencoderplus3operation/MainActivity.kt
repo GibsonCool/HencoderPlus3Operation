@@ -7,7 +7,10 @@ import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
 import android.util.SparseArray
 import com.example.doublex.hencoderplus3operation.data.HomeTab
+import com.example.doublex.hencoderplus3operation.fragment.DashBoardFragment
 import com.example.doublex.hencoderplus3operation.fragment.FirstFragment
+import com.example.doublex.hencoderplus3operation.fragment.PieChartFragment
+import com.example.doublex.hencoderplus3operation.fragment.XFermodeFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -20,8 +23,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-        homeTabs.add(HomeTab(FirstFragment::class.java))
-        homeTabs.add(HomeTab(FirstFragment::class.java))
+        homeTabs.add(HomeTab(XFermodeFragment::class.java))
+        homeTabs.add(HomeTab(PieChartFragment::class.java))
+        homeTabs.add(HomeTab(DashBoardFragment::class.java))
         homeTabs.add(HomeTab(FirstFragment::class.java))
 
         mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager,homeTabs)

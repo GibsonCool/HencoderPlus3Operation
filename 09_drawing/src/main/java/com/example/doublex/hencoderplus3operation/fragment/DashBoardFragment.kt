@@ -8,10 +8,10 @@ import android.view.ViewGroup
 import com.example.doublex.hencoderplus3operation.R
 import kotlinx.android.synthetic.main.fragment_first.view.*
 
-class FirstFragment:Fragment(){
+class DashBoardFragment:Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootView = inflater.inflate(R.layout.fragment_first, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_dash_board, container, false)
         return rootView
     }
 }
