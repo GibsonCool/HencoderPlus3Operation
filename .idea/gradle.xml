@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/09_drawing" />
             <option value="$PROJECT_DIR$/10_text_and_transformation" />
+            <option value="$PROJECT_DIR$/11_animation" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
