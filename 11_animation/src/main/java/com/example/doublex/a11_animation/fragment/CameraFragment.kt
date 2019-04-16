@@ -38,45 +38,44 @@ class CameraFragment : Fragment() {
              * 多个属性同时做动画
              */
             //方式一：
-            ObjectAnimator.ofFloat(camera_view, "bottomFlip", 50f).apply {
-                duration = 2000
-                start()
-            }
-//            ObjectAnimator.ofFloat(camera_view, "topFlip", -50f).apply {
-//                startDelay=200
+//            ObjectAnimator.ofFloat(camera_view, "bottomFlip", 50f).apply {
+//                duration = 500
+//                start()
+//            }
+//            ObjectAnimator.ofFloat(camera_view, "flipRotation", 270f).apply {
+//                startDelay=500
 //                duration = 2000
 //                start()
 //            }
-            ObjectAnimator.ofFloat(camera_view, "flipRotation", 270f).apply {
-                startDelay=200
-                duration = 2000
-                start()
-            }
+//            ObjectAnimator.ofFloat(camera_view, "topFlip", -50f).apply {
+//                startDelay=2500
+//                duration = 500
+//                start()
+//            }
 
             //方式二：使用animatorSet
-//        val bottomAnimator = ObjectAnimator.ofFloat(camera_view, "bottomFlip", 50f).apply {
-//            duration = 2000
-//        }
-//        val topAnimator = ObjectAnimator.ofFloat(camera_view, "topFlip", -50f).apply {
-//            duration = 2000
-//        }
-//        val flipRotationAnimator = ObjectAnimator.ofFloat(camera_view, "flipRotation", 270f).apply {
-//            duration = 2000
-//        }
-//
-//
-//        AnimatorSet().apply {
+        val bottomAnimator = ObjectAnimator.ofFloat(camera_view, "bottomFlip", 50f).apply {
+            duration = 800
+        }
+        val topAnimator = ObjectAnimator.ofFloat(camera_view, "topFlip", -50f).apply {
+            duration = 800
+        }
+        val flipRotationAnimator = ObjectAnimator.ofFloat(camera_view, "flipRotation", 270f).apply {
+            duration = 2000
+        }
+
+        AnimatorSet().apply {
 //            playTogether(bottomAnimator,topAnimator,flipRotationAnimator)   //同时执行
-////            playSequentially(bottomAnimator,topAnimator,flipRotationAnimator) //顺序执行
-//            start()
-//        }
+            playSequentially(bottomAnimator,flipRotationAnimator,topAnimator) //顺序执行
+            start()
+        }
 
             //方式三：使用 propertyValuesHolder
 //        val bottomFlipHolder = PropertyValuesHolder.ofFloat("bottomFlip", 30f)
 //        val topFlipHolder = PropertyValuesHolder.ofFloat("topFlip", -30f)
 //        val flipRotationHolder = PropertyValuesHolder.ofFloat("flipRotation", 270f)
-//        ObjectAnimator.ofPropertyValuesHolder(camera_view, bottomFlipHolder, topFlipHolder, flipRotationHolder).apply {
-//            duration = 2000
+//        ObjectAnimator.ofPropertyValuesHolder(camera_view, bottomFlipHolder, flipRotationHolder, topFlipHolder).apply {
+//            duration = 3000
 //            start()
 //        }
 
