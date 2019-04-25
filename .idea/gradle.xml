@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/10_text_and_transformation" />
             <option value="$PROJECT_DIR$/11_animation" />
             <option value="$PROJECT_DIR$/12_material_edittext" />
+            <option value="$PROJECT_DIR$/13_layout" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
