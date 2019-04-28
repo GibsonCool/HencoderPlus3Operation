@@ -27,6 +27,13 @@ class TagLayout : ViewGroup {
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
 
 
+    /**
+     * 重写此方法，返回false，表示我这个ViewGroup不是可滑动的
+     * 如果是true表示可滑动，对自己内部的view的触摸会有一个100毫秒的延迟，这样做可优化一点
+     * 具体可查看View 的 onTouchEvent事件中的 isInScrollingContainer=true --> postDelayed(mPendingCheckForTap, ViewConfiguration.getTapTimeout());
+     */
+    override fun shouldDelayChildPressedState(): Boolean = false
+
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         //viewgroup的宽度和模式
         val widthMode = MeasureSpec.getMode(widthMeasureSpec)
