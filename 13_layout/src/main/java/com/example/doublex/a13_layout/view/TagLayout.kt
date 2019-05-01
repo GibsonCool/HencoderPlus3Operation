@@ -1,8 +1,10 @@
 package com.example.doublex.a13_layout.view
 
 import android.content.Context
+import android.graphics.Color
 import android.graphics.Rect
 import android.util.AttributeSet
+import android.util.Log
 import android.view.ViewGroup
 
 /**
@@ -66,7 +68,8 @@ class TagLayout : ViewGroup {
 
             // 如果父view的宽度要求不是不限制，并且行已经使用的宽度加上当前第一次测量出来的child实际需要的宽度大于父view的宽度
             // 则进行换行第二次测量并设置改变child的位置尺寸到下一行
-            if (widthMode != MeasureSpec.UNSPECIFIED && lineWidthUsed + child.measuredWidth > widthSize) {
+            val isNeedWrap = widthMode != MeasureSpec.UNSPECIFIED && lineWidthUsed + child.measuredWidth > widthSize
+            if (isNeedWrap) {
                 lineWidthUsed = 0
                 heightUsed += lineHeight
                 measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, heightUsed)
@@ -90,7 +93,16 @@ class TagLayout : ViewGroup {
             //计算和累加已使用的宽高值
             lineWidthUsed += child.measuredWidth
             widthUsed = Math.max(lineWidthUsed, widthUsed)
-            lineHeight = Math.max(lineHeight, child.measuredHeight)      //如果只有一行的时候取子view中的最高值
+
+            //判断是否折行
+            lineHeight = if (isNeedWrap) {
+                //如果折行了，那么新行高就取view的实际测量高度
+                Log.e("doublex","measuredHeight:${child.measuredHeight}   lineHeight:$lineHeight  text:${(child as ColoredTextView).text}")
+                child.measuredHeight
+            } else{
+                //如果没有折行，行高始终保持最大值
+                Math.max(lineHeight, child.measuredHeight)
+            }
 
         }
 
