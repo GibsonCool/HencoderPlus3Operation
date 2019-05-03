@@ -6,8 +6,8 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
 import android.util.SparseArray
+import com.example.doublex.a15_scalableimageview.fragment.ScalableImageviewPlusFragment
 import com.example.doublex.a15_scalableimageview.fragment.ScalableImageviewFragment
-import com.example.doublex.a15_scalableimageview.fragment.ScalableImageviewTeacherFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         homeTabs.add(ScalableImageviewFragment::class.java)
-//        homeTabs.add(ScalableImageviewTeacherFragment::class.java)
+        homeTabs.add(ScalableImageviewPlusFragment::class.java)
 
         mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager, homeTabs)
         container.adapter = mSectionsPagerAdapter

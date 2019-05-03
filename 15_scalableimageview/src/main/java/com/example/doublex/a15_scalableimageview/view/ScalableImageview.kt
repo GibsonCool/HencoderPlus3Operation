@@ -45,7 +45,7 @@ class ScalableImageview : View, GestureDetector.OnGestureListener, GestureDetect
             field = value
             invalidate()
         }
-    val scaleAnimator: ObjectAnimator by lazy { ObjectAnimator.ofFloat(this, "scaleFraction", 0f, 1f) }
+    val scaleAnimator: ObjectAnimator by lazy { ObjectAnimator.ofFloat(this, "currentScale", 0f, 1f) }
 
     //touch事件-->手势识别器
     var detector: GestureDetectorCompat
