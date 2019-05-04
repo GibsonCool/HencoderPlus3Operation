@@ -237,6 +237,7 @@ class ScalableImageviewPlus : View {
      * 缩放监听器
      */
     inner class HenScaleListener : ScaleGestureDetector.OnScaleGestureListener {
+        //初始放缩系数
         var initialScal: Float = 0f
         override fun onScaleBegin(detector: ScaleGestureDetector): Boolean {
             initialScal = currentScale
@@ -247,6 +248,7 @@ class ScalableImageviewPlus : View {
         }
 
         override fun onScale(detector: ScaleGestureDetector): Boolean {
+            // detector.scaleFactor 手指进行的放缩系数。
             currentScale = initialScal * detector.scaleFactor
             invalidate()
             return false
