@@ -24,7 +24,7 @@ class ConstraintSetActivity : AppCompatActivity() {
         TransitionManager.beginDelayedTransition(constraintLayout)
 
         val constraintSet = ConstraintSet().apply {
-            //防止布局中有无id控件，
+            //防止布局中有 无id的 控件，
             isForceId = false
             clone(
                 this@ConstraintSetActivity,
@@ -32,6 +32,7 @@ class ConstraintSetActivity : AppCompatActivity() {
                     R.id.twitter -> R.layout.activity_constranit_end
                     R.id.wechat -> R.layout.activity_constranit_center
                     R.id.weibo->R.layout.activity_constranit_circular
+                    R.id.qzone->R.layout.activity_constranit_center2
                     else -> R.layout.activity_constranit_start
 
                 }

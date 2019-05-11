@@ -23,6 +23,8 @@
         <activity android:name=".CircularPositioning"/>
         <activity android:name=".CircularReveal"/>
         <activity android:name=".ConstraintSetActivity"/>
+        <activity android:name=".DimensionRatio"/>
+        <activity android:name=".LinearActivity"/>
 
     </application>
 
