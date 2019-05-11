@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_plach_holder.*
 
 /**
- * 通过自定义constraintHelper
+ * 通过PlaceHolder setContentId来指定控件放到占位符的位置
  */
 class PlaceHolderActivity : AppCompatActivity() {
 

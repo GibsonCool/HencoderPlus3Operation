@@ -26,6 +26,8 @@
         <activity android:name=".DimensionRatio"/>
         <activity android:name=".LinearActivity"/>
         <activity android:name=".PlaceHolderActivity"/>
+        <activity android:name=".GuideLineActivity"/>
+        <activity android:name=".GroupLayerActivity"/>
 
     </application>
 
