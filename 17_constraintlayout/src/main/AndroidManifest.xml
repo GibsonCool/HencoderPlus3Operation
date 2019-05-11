@@ -25,6 +25,7 @@
         <activity android:name=".ConstraintSetActivity"/>
         <activity android:name=".DimensionRatio"/>
         <activity android:name=".LinearActivity"/>
+        <activity android:name=".PlaceHolderActivity"/>
 
     </application>
 
