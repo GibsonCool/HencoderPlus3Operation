@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/15_scalableimageview" />
             <option value="$PROJECT_DIR$/16_multi_touch" />
             <option value="$PROJECT_DIR$/17_constraintlayout" />
+            <option value="$PROJECT_DIR$/18_motionlayout" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
