@@ -20,6 +20,7 @@
         <activity android:name=".ObjectAnimator2Activity"/>
         <activity android:name=".TransitionManagerGoActivity"/>
         <activity android:name=".ConstraintSetActivity"/>
+        <activity android:name=".MotionLayoutActivity"/>
     </application>
 
 </manifest>
