@@ -1,4 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<MotionScene xmlns:android="http://schemas.android.com/apk/res/android">
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!--一般使用MotionScene不会在通过应用布局的方式使用，但是也支持作为一种了解补充-->
+    <!--<Transition-->
+    <!--app:constraintSetStart="@layout/activity_constraint_start"-->
+    <!--app:constraintSetEnd="@layout/activity_constraint_end">-->
+    <!--<OnClick-->
+    <!--app:targetId="@+id/image_film_cover"-->
+    <!--app:clickAction="toggle"-->
+    <!--/>-->
+    <!--</Transition>-->
+
+
+    <!--正常是通过引用配置的不通ConstraintSet的id来使用-->
+    <Transition app:constraintSetStart="@id/start"
+                app:constraintSetEnd="@id/end">
+
+        <OnClick
+                app:targetId="@+id/fab_favourite"
+                app:clickAction="toggle"/>
+
+        <OnSwipe app:touchRegionId="@+id/image_film_cover"
+                 app:onTouchUp="decelerate"
+                 app:dragDirection="dragDown"/>
+    </Transition>
+
+    <!--开始场景-->
+    <ConstraintSet android:id="@+id/start">
+        <!--开始节点不需要改变就和原布局一样就不用写-->
+    </ConstraintSet>
+
+    <!--结束场景-->
+    <ConstraintSet android:id="@+id/end">
+        <!--将场景中view的属性放到这里节点换成Constraint-->
+        <Constraint
+                android:id="@+id/background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Constraint
+                android:id="@+id/image_film_cover"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@null"
+                android:src="@drawable/film_cover"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Constraint
+                android:id="@+id/fab_favourite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_bookmark_24dp"
+                android:tint="@color/colorBookMark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:fabSize="mini"/>
+
+    </ConstraintSet>
 
 </MotionScene>

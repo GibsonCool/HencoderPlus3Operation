@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition app:constraintSetStart="@id/start"
+                app:duration="1000"
+                app:constraintSetEnd="@id/end">
+
+        <OnSwipe app:touchRegionId="@+id/view"
+                 app:dragDirection="dragDown"/>
+
+        <!--关键帧-->
+        <KeyFrameSet>
+
+            <!--定义属性关键帧-->
+            <KeyAttribute
+                app:motionTarget="@id/view"
+                app:framePosition="50"
+                android:rotation="180"
+                android:scaleX="2"
+                android:scaleY="2">
+
+                <!--这里也可以配置自定义属性-->
+                <!--<CustomAttribute></CustomAttribute>-->
+
+            </KeyAttribute>
+
+            <!--定义位置关键帧-->
+            <KeyPosition
+                app:motionTarget="@id/view"
+                app:framePosition="50"
+                app:percentX="0.6"
+                app:percentY="0.4"
+                app:keyPositionType="pathRelative"
+                app:curveFit="linear"
+            />
+        </KeyFrameSet>
+    </Transition>
+
+
+    <!--ConstraintSet还可以继承其他ConstraintSet-->
+    <ConstraintSet android:id="@+id/base">
+
+        <Constraint android:id="@+id/view">
+            <!--控制运动轨迹-->
+            <!--<Motion app:pathMotionArc="startVertical"/>-->
+
+        </Constraint>
+
+    </ConstraintSet>
+
+
+    <ConstraintSet android:id="@+id/start"
+                   app:deriveConstraintsFrom="@id/base">
+
+        <!--如果有更丰富的要求，则可以把属性、动画路径等等放到Constraint中的其他子节点去控制-->
+        <Constraint android:id="@+id/view">
+
+            <Layout
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"/>
+
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@+id/view">
+            <Layout
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginBottom="50dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"/>
+        </Constraint>
+
+    </ConstraintSet>
+
+
+</MotionScene>

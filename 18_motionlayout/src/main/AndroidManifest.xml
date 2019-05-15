@@ -21,6 +21,7 @@
         <activity android:name=".TransitionManagerGoActivity"/>
         <activity android:name=".ConstraintSetActivity"/>
         <activity android:name=".MotionLayoutActivity"/>
+        <activity android:name=".SimpleActivity"/>
     </application>
 
 </manifest>

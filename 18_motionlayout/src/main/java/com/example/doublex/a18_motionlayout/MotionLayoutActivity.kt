@@ -5,6 +5,12 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+
+/**
+ * 根布局使用MotionLayout，动画场景通过应用
+ *      app:layoutDescription="@xml/scene_motion_layout"
+ * 来进行管理和配置，也无需在代码中进行其他操作
+ */
 class MotionLayoutActivity :AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {

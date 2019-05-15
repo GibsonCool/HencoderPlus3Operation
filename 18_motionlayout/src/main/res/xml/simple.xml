@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition app:constraintSetStart="@id/start"
+                app:duration="1000"
+                app:constraintSetEnd="@id/end">
+
+        <OnSwipe app:touchRegionId="@+id/view"
+                 app:dragDirection="dragDown"/>
+    </Transition>
+
+
+    <!--ConstraintSet还可以继承其他ConstraintSet-->
+    <ConstraintSet android:id="@+id/base">
+
+        <Constraint android:id="@+id/view">
+            <!--控制运动轨迹-->
+            <Motion
+                    app:pathMotionArc="startVertical"/>
+
+        </Constraint>
+
+    </ConstraintSet>
+
+
+    <ConstraintSet android:id="@+id/start"
+                   app:deriveConstraintsFrom="@id/base">
+
+        <!--如果有更丰富的要求，则可以把属性、动画路径等等放到Constraint中的其他子节点去控制-->
+        <Constraint android:id="@+id/view">
+
+            <Layout
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"/>
+
+
+            <!--自定义属性是用属性名字 (attributeName) 来指定的，属性名字需要和对象中的getter/setter方法对应：-->
+            <!--getter: getName (e.g. getBackgroundColor)-->
+            <!--setter: setName (e.g. setBackgroundColor)-->
+            <CustomAttribute
+                app:attributeName="BackgroundColor"
+                app:customColorValue="@color/colorAccent"
+            />
+
+
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@+id/view">
+            <Layout
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"/>
+
+            <Transform
+                android:rotation="270"
+                android:scaleX="1.3"
+                android:scaleY="1.3"
+                android:translationZ="12dp"
+            />
+
+            <CustomAttribute
+                    app:attributeName="backgroundColor"
+                    app:customColorValue="@color/colorPrimaryDark"
+            />
+        </Constraint>
+
+    </ConstraintSet>
+
+
+</MotionScene>
