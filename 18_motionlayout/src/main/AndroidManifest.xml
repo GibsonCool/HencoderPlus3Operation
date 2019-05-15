@@ -22,6 +22,8 @@
         <activity android:name=".ConstraintSetActivity"/>
         <activity android:name=".MotionLayoutActivity"/>
         <activity android:name=".SimpleActivity"/>
+        <activity android:name=".WithDrawerActivity"/>
+        <activity android:name=".WithCoordinatorActivity"/>
     </application>
 
 </manifest>
