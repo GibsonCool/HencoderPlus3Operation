@@ -24,6 +24,9 @@
         <activity android:name=".SimpleActivity"/>
         <activity android:name=".WithDrawerActivity"/>
         <activity android:name=".WithCoordinatorActivity"/>
+        <activity android:name=".HenCoderActivity"/>
+        <activity android:name=".YoutubeLikeActivity"/>
+        <activity android:name=".MotionLayoutPlusActivity"/>
     </application>
 
 </manifest>
