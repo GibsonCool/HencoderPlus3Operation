@@ -62,7 +62,7 @@ class MultiTouchView3 : View {
             MotionEvent.ACTION_POINTER_UP,
             MotionEvent.ACTION_UP -> {
                 val pointerId = event.getPointerId(event.actionIndex)
-                paths.remove(pointerId)
+                paths.remove(pointerId) //这里应该是要使用复用池，然后调用path.reset(),
             }
 
         }

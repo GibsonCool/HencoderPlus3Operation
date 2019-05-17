@@ -1,1 +1,1 @@
-include ':09_drawing', ':10_text_and_transformation', ':11_animation', ':12_material_edittext', ':13_layout', ':14_touch', ':15_scalableimageview', ':16_multi_touch', ':17_constraintlayout', ':18_motionlayout'
+include ':09_drawing', ':10_text_and_transformation', ':11_animation', ':12_material_edittext', ':13_layout', ':14_touch', ':15_scalableimageview', ':16_multi_touch', ':17_constraintlayout', ':18_motionlayout', ':19_touch_viewgroup'

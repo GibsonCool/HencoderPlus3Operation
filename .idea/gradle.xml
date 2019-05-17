@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/16_multi_touch" />
             <option value="$PROJECT_DIR$/17_constraintlayout" />
             <option value="$PROJECT_DIR$/18_motionlayout" />
+            <option value="$PROJECT_DIR$/19_touch_viewgroup" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
