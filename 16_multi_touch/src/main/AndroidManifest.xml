@@ -18,9 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MultiTouchReplay"/>
-        <activity android:name=".activity.MultiTouchTogether"/>
-        <activity android:name=".activity.MultiTouchNotAffect"/>
+        <activity android:name=".activity.MultiTouchReplay" android:label="多点接力作用"/>
+        <activity android:name=".activity.MultiTouchTogether" android:label="多点共同作用"/>
+        <activity android:name=".activity.MultiTouchNotAffect" android:label="多点画板"/>
     </application>
 
 </manifest>
