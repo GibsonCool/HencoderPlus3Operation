@@ -1,44 +1,36 @@
 package com.example.doublex.a16_multi_touch
 
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
-import android.util.SparseArray
-import com.example.doublex.a16_multi_touch.fragment.MultiTouchFragment
+import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
-    val homeTabs = ArrayList<Class<*>>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
 
-        homeTabs.add(MultiTouchFragment::class.java)
+        packageManager.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES).activities.forEach { activityInfo ->
+            if (activityInfo.name == this::class.java.name)
+                return@forEach
 
-        mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager, homeTabs)
-        container.adapter = mSectionsPagerAdapter
-    }
+            val clazz = Class.forName(activityInfo.name)
 
+            root_layout.addView(Button(this).apply {
+                isAllCaps = false
+                text = clazz.simpleName
+                setOnClickListener {
+                    startActivity(Intent(this@MainActivity, clazz))
+                }
+            })
 
-    private class SectionsPagerAdapter(fm: FragmentManager, val items: List<Class<*>>) : FragmentPagerAdapter(fm) {
-        private val fragments by lazy { SparseArray<Fragment>(items.size) }
-        override fun getItem(position: Int): Fragment {
-            if (fragments[position] == null) {
-                val instance = items[position].newInstance() as Fragment
-                fragments.put(position, instance)
-            }
-
-            return fragments[position]
-        }
-
-        override fun getCount(): Int {
-            return items.size
         }
     }
+
+
+
 }

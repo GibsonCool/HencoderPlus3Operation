@@ -10,16 +10,9 @@ import android.view.View
 import com.example.doublex.a16_multi_touch.Utils
 
 /**
- * 多点触控的几个关键点：
- *  1、一个MotionEvent对象中多存储了多个Pointer的相关信息
- *  2、pointer就代表一个触摸点 ，每个pointer都有自己的事件类型、坐标值、index、id （id不变用于查找，index变化用于遍历，各司其职支持多点触控的基础）
- *  3、event.getPointerId(index) 根据index获取pointer id       event.findPointerIndex(id) 根据pointer id获取index
- *  4、event.actionIndex获取在 MotionEvent.ACTION_POINTER_DOWN 和 MotionEvent.ACTION_POINTER_UP 事件发生时Pointer的index
- *
- *
- *  下面是一个多点接力型的示例
+ * 多点各自作用。实现简单画板
  */
-class MultiTouchView : View {
+class MultiTouchView3 : View {
 
 
     private val imageWidth = Utils.dp2px(200f)
@@ -53,11 +46,7 @@ class MultiTouchView : View {
             }
 
             MotionEvent.ACTION_MOVE -> {
-                /**
-                 *
-                 * 移动的时候根据追踪的Point id 取对应index 的事件坐标来进行移动，
-                 * 达到多点触控接力型的效果，而不是每次都去index=0 ，出现两指切换时候闪烁的情况
-                 */
+
                 val index = event.findPointerIndex(trackingPointerId)
                 offsetX = imageOffsetX + event.getX(index) - downX
                 offsetY = imageOffsetY + event.getY(index) - downY
