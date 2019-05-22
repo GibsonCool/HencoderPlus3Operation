@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/root_layout"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="偷懒没有自己实现。不过看到一篇不错的文章介绍\n
+            http://blog.cgsdream.org/2016/12/30/android-nesting-scroll/\n  相应源码:\n
+            https://github.com/cgspine/NestingScrollDemo"
+    />
+
+</LinearLayout>
