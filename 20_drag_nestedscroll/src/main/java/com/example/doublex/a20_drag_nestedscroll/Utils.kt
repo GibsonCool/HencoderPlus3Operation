@@ -7,8 +7,12 @@ import android.util.TypedValue
 
 object Utils {
 
-    fun dp2px(dp: Float) = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Resources.getSystem().displayMetrics)
+    fun dp2px(dp: Float) =
+        TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Resources.getSystem().displayMetrics)
 
 
-    fun getZFormCamera()= -8 * Resources.getSystem().displayMetrics.density
+    fun getZFormCamera() = -8 * Resources.getSystem().displayMetrics.density
+
+    val Number.dp: Int
+        get() = (toInt() * Resources.getSystem().displayMetrics.density.toInt())
 }
