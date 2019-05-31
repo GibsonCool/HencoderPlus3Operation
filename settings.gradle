@@ -1,4 +1,4 @@
-include ':09_drawing',
+include ':09_drawing', ':22_thread_interaction',
         ':10_text_and_transformation',
         ':11_animation',
         ':12_material_edittext',

@@ -21,6 +21,7 @@
             <option value="$PROJECT_DIR$/19_touch_viewgroup" />
             <option value="$PROJECT_DIR$/20_drag_nestedscroll" />
             <option value="$PROJECT_DIR$/21_thread_synchronization" />
+            <option value="$PROJECT_DIR$/22_thread_interaction" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
